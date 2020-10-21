@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- computed 中声明的是方法属性，不可与data的变量重复 -->
+<!-- 定义的方法属性必须在页面中渲染使用生效 才会对内部的变量进行监听 -->
+<div id="app">
+    <p @click="add_num">{{ num }}</p>
+    <hr>
+    <p>十: {{parseInt(num/10)}}</p>
+    <p>个: {{parseInt(num%10)}}</p>
+    <hr>
+    <input type="text" v-model="shi">
+    <input type="text" v-model="ge">
+    <br>
+    结果: <b>{{ shi * 10 + +ge }}</b>
+    <hr>
+    <input type="number" v-model="shi" max="9">
+    <input type="number" v-model="ge" max="9">
+    <br>
+    结果: <b>{{ result }}</b>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 20,
+            shi: "",
+            ge: "",
+        },
+        methods:{
+            add_num(){
+                this.num ++;
+            },
+        },
+        computed:{
+            result(){
+                return this.shi * 10 + +this.ge;
+            },
+        },
+    })
+</script>
+</body>
+</html>
