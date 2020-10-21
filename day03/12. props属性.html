@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <com css="red" user="alice"></com>
+    <com css="green" user="zqtx"></com>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+
+    // 组件中的template中只能有一个唯一的跟标签  不能有同级标签
+    // 组件的根标签可以不是div  但是不能有兄弟标签
+    let com = {
+        template: `
+        <div>
+            <div :class="css">我的组件</div>
+        </div>
+        `,
+
+        // 可以在组件内接收组件标签传递过来的参数，  从而使组件内部可以拥有动态的属性
+        // props可以理解为一个数组，  里面是所有组件可以接收的参数，相当于参数名
+        // 可以将props理解为一个只读的data属性
+        props: ["css", "user"],
+        created: function () {
+            console.log(this.user)
+        }
+    }
+
+
+    new Vue({
+        el: "#app",
+        data: {},
+        components:{
+            com: com,
+        }
+    })
+</script>
+</body>
+</html>

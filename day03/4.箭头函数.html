@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 在回调函数中使用箭头函数不会改变原有的this指向 -->
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    // 正常函数
+    function add(a, b){
+        console.log(a+b)
+    }
+    add(2, 6)
+
+    // 匿名函数
+    let app = function (a, b, v){
+        console.log(a * b + v)
+    }
+    app(5, 8, 10)
+
+    //箭头函数其实就是对于匿名函数写法的简化
+    // （参数列表） => 如果在函数体内只有一条语句则可以省略{}
+    let app2 = (a, b, c) => console.log(a + b +c)
+    app2(2, 6, 6)
+    // 不省略{}
+    let app3 = (a, b, c) => {
+        console.log(a + b +c)
+    }
+    app3(2, 6, 6)
+
+
+</script>
+</body>
+</html>

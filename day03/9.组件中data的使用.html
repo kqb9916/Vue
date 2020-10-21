@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <first></first>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+
+    let first = {
+        template: `
+          <div>
+          组件中data的使用
+          <br>
+          <span @click="change">这是, {{username}}</span>
+          </div>
+        `,
+        // 组件中data对应的值的 函数
+        data: function () {
+            return {
+                username: "康康！！！",
+            }
+        },
+        methods: {
+            change(){
+                alert("帅！！！")
+            }
+        }
+    }
+
+    Vue.component("first", first)
+
+    new Vue({
+        el: "#app",
+        data: {},
+    })
+</script>
+</body>
+</html>

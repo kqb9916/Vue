@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    // 如果函数的参数只有一个，则可以省略 （）
+    let app = x => console.log(x +3)
+    app(8)
+
+    // 如果函数体中只有一条语句而且还是return 则return可以省略
+    let app2 = function (a, b){
+        return a + b
+    }
+    let num = app2(4,5)
+    console.log(num)
+    // 省略
+    let app3 = (a, b) => a + b;
+    let num2 = app3(10, 20)
+    console.log(num2)
+
+    // 函数体中只有一条语句且是return  参数只有一个
+    let app4 = a => a + 5;
+    let app6 = function (a){
+        return a+5
+    }
+    console.log(app4(5), app6(5))
+
+    // 如果函数没有参数， 则（） 不能省略
+    let app7 = () => console.log("康钦斌！！！！！！！！！")
+    app7()
+</script>
+</body>
+</html>

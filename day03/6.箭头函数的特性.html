@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    let user = {
+        username: "康康",
+        app: function (){
+            // 当前this指的是当前的user实例
+            console.log(this.username)
+        }
+    }
+    user.app()
+
+    let student = {
+        username: "ning",
+        // 在回调函数中this的指向会被改变  不在指向当前student实例
+        app: function () {
+            setTimeout(function () {
+                // 获取不到this对象
+                console.log(this.username)
+            })
+        }
+    }
+    student.app()
+
+
+    let emp = {
+        username: "夏宁",
+        // 回调函数中this指向会被改变
+        app: function () {
+            // 在回调函数中 使用箭头函数不会改变this指向
+            setTimeout(() => {
+                console.log(this.username)
+            })
+        }
+    }
+    emp.app()
+</script>
+</body>
+</html>

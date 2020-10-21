@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <com></com>
+    <h3>shuai!!!!!!!</h3>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    let com = {
+        template: `
+            <div>
+            <b>组件的特性</b>
+            <br>
+            <button @click="change">click_me</button>
+            <hr>
+            <span>{{number}}</span>
+            </div>
+        `,
+        methods:{
+            change(){
+                this.number --;
+            },
+        },
+        data:function () {
+            return{
+                number: 52,
+            }
+        }
+    }
+
+    Vue.component("com", com)
+
+    new Vue({
+        el: "#app",
+        data: {},
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    姓: <input type="text" v-model="first_name">
+    名: <input type="text" v-model="last_name">
+    <br>
+    全名: <p>{{ name }}</p>
+    <hr>
+    全名: <input type="text" v-model="all_name">
+    <br>
+    姓: <b>{{ f_name }}</b>
+    名: <b>{{ l_name }}</b>
+</div>
+<!-- p 会强制换行  b不会 -->
+
+<!-- 监听属性监听的是data中已经存在的变量的变化 -->
+<!-- 监听的值一旦发生改变 则就会触发监听事件  监听事件不需要返回值-->
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            first_name: "",
+            last_name: "",
+            all_name: "",
+            f_name: "",
+            l_name: "",
+        },
+        computed:{
+            name(){
+                return this.first_name + this.last_name;
+            },
+        },
+        watch:{
+            all_name(){
+                let name = this.all_name.split(" ")
+                this.f_name = name[0];
+                this.l_name = name[1];
+            },
+        },
+    })
+</script>
+</body>
+</html>

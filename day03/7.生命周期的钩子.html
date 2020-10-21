@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span id="span">{{ number }}</span>
+
+    <h3 @click="change" id="sp">{{ number }}</h3>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            number: 50,
+        },
+        methods: {
+            change(){
+                this.number ++;
+            },
+        },
+
+        // 1. beforeCreate  vue的生命周期的第一个钩子
+        // 该钩子函数在执行时vue实例仅完成了自身事件的绑定以及生命周期初始化
+        // 此时vue实例中还没有 data  el  methods等属性
+        beforeCreate: function () {
+            // 没有data 就没有number
+            console.log("beforeCreate: " +this.number)
+        },
+
+        // 2. created  第二个钩子  在这个函数执行时vue实例已经初始化了data属性 methods等相关方法
+        created: function () {
+            console.log("created: " + this.number)
+        },
+
+        // 3.beforeMount 该函数在执行时vue将el作为执行范围来进行模板编译
+        beforeMount: function () {
+            console.log("beforeMount: " + document.getElementById("span").innerText)
+        },
+
+        // 4.mounted 此函数在执行时已经将数据渲染到了页面并完成了页面数据的更新
+        mounted: function () {
+            console.log("mounted: " +document.getElementById("span").innerText)
+        },
+
+        // 5.beforeUpdate 该函数是在数据被修改时执行
+        // 这个执行仅仅是vue实例中数据变化但页面显示的依旧是原来的数据
+        beforeUpdate() {
+            console.log("beforeUpdate: " +this.number)
+            console.log("beforeUpdate: " +document.getElementById("sp").innerText)
+        },
+
+        // 6.该函数在执行时  vue实例中数据和页面中渲染的数据已经更新完成了
+        updated(){
+            console.log("update: " +this.number)
+            console.log("update: " +document.getElementById("sp").innerText)
+        },
+
+        // 7.beforeDestroy  钩子函数在执行时  vue实例中的data和methods还没有被销毁
+        beforeDestroy(){
+
+        },
+
+        // 8.函数执行时  vue实例已经被销毁了
+        destroyed(){
+
+        },
+
+    })
+</script>
+</body>
+</html>

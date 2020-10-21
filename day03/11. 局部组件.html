@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <com></com>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+
+<script>
+
+    let com ={
+        template: `
+        <div>
+        局部组件
+        <hr>
+        </div>
+        `,
+    }
+    // 全局注册
+    Vue.component("com", com)
+
+    // 根组件
+    new Vue({
+        el: "#app",
+        data: {},
+        // 将com注册给某个vue实例  局部组件只能在注册的vue的实例中使用 其他范围不行
+        components:{
+            "com": com,
+        },
+    })
+</script>
+</body>
+</html>
