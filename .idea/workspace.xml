@@ -11,6 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7d660c-62d7-4f78-8bc1-809521648139" name="Default Changelist" comment="测试提交">
+      <change afterPath="$PROJECT_DIR$/day04/1.vue路由器的使用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/2. 组件的应用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/3.路由的参数传递.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/4. 动态路由传参.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/5. js跳转传参.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +32,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/day02" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j8dbYQIy9UoTxguwdTwQXrpKI0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -41,16 +46,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../代码/day3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../代码/day4" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\实习基地\05 web进阶\Vue\day02" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\实习基地\05 web进阶\Vue\day04" />
       <recent name="D:\实习基地\05 web进阶\Vue\day03" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\实习基地\05 web进阶\Vue\day04" />
+      <recent name="D:\实习基地\05 web进阶\Vue\day02" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,6 +73,7 @@
       <workItem from="1603191753900" duration="9196000" />
       <workItem from="1603260750413" duration="61000" />
       <workItem from="1603271465074" duration="1139000" />
+      <workItem from="1603363968272" duration="5075000" />
     </task>
     <servers />
   </component>
@@ -89,17 +97,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="测试提交" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="41" y="335" key="FileChooserDialogImpl" timestamp="1603279875873">
+    <state x="488" y="229" key="FileChooserDialogImpl" timestamp="1603364320842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="41" y="335" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603279875873" />
-    <state x="471" y="110" key="SettingsEditor" timestamp="1603194596005">
+    <state x="488" y="229" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603364320842" />
+    <state x="471" y="110" key="SettingsEditor" timestamp="1603365134256">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="471" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603194596005" />
-    <state x="781" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603286093117">
+    <state x="471" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603365134256" />
+    <state x="782" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1603368792623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="781" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603286093117" />
+    <state x="782" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603368792623" />
   </component>
 </project>

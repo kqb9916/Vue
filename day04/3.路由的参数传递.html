@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <b>路由的参数传递</b>
+<!--    <router-link to="/first">1</router-link>-->
+<!--    <router-link to="/second">2</router-link>-->
+    <hr>
+
+    <router-view></router-view>
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+    let first = {
+        template: `
+            <div>
+            组件一
+            <router-link to="/second?id=3&name=康康">查看组件二</router-link>
+            </div>
+        `,
+    }
+
+    let second = {
+        template: `
+            <div>
+            组件二,需要接受组件一传递过来的id : {{ $route.query.id }}
+            <br>
+            组件一传过来的用户名 : {{ $route.query.name }}
+            </div>
+        `,
+    }
+
+    let myRouter = new VueRouter({
+        routes: [
+            {path: "/first", component: first},
+            {path: "/second", component: second},
+            {path: "/", redirect: "/first"},
+        ]
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        router: myRouter,
+    })
+</script>
+</body>
+</html>
