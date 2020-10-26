@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <first></first>
+    <second></second>
+    <hr>
+    <com1></com1>
+    <com2></com2>
+
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+<script src="js/vuex.3.0.1.js"></script>
+
+<script>
+
+    let first = {
+        template: `
+            <div>
+            组件一
+            <button @click="add">点我</button>
+            </div>
+        `,
+        methods: {
+            add(){
+                // 向状态机提交作业
+                this.$store.commit("add_count")
+            },
+        },
+    }
+
+    let second = {
+        template: `
+        <div>
+        组件二:  -- {{ $store.state.count }}
+        <br>
+        数字的倒数: {{ $store.getters.change_count }}
+        </div>
+        `,
+    }
+
+    let com1 = {
+        template: `
+            <div>
+            组件一
+            <button @click="sum">按钮</button>
+            </div>
+        `,
+        methods: {
+            sum(){
+                // alert()
+                this.$store.commit("sum_date", 100)
+            },
+        },
+    }
+
+    let com2 = {
+        template : `
+            <div>
+            组件二
+            <span>求和: {{ $store.getters.result }}</span>
+            </div>
+        `,
+        }
+
+    let myStore = new Vuex.Store({
+        state: {
+            count: 1,
+            num_list: [52,106],
+        },
+        mutations: {
+            add_count(state) {
+                state.count++;
+            },
+            sum_date(state, num){
+                console.log(state.num_list, num);
+                state.num_list.push(num)
+            },
+        },
+        // getters 与 state  的关系  类似于  data 和 computed
+        getters:{
+            change_count(state){
+                return 1 / state.count;
+            },
+            result(state){
+                let res = 0;
+                for(let i of state.num_list){
+                    res += i;
+                }
+                return res;
+            },
+        },
+    })
+    new Vue({
+        el: "#app",
+        data: {},
+        components : {
+            first: first,
+            second: second,
+            com1: com1,
+            com2: com2,
+        },
+        store: myStore,
+    })
+</script>
+</body>
+</html>

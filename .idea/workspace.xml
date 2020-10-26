@@ -11,6 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a7d660c-62d7-4f78-8bc1-809521648139" name="Default Changelist" comment="测试提交">
+      <change afterPath="$PROJECT_DIR$/day06/1.状态机.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day06/2. getters.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day06/js/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day06/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day06/js/vuex.3.0.1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,18 +46,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/day06/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\实习基地\05 web进阶\Vue\day04" />
-      <recent name="D:\实习基地\05 web进阶\Vue\day03" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\实习基地\05 web进阶\Vue\day04" />
       <recent name="D:\实习基地\05 web进阶\Vue\day02" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Practice_Base\05 web进阶\Vue\day06\js" />
+      <recent name="D:\Practice_Base\05 web进阶\Vue\day06" />
+      <recent name="D:\实习基地\05 web进阶\Vue\day04" />
+      <recent name="D:\实习基地\05 web进阶\Vue\day03" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,6 +80,7 @@
       <workItem from="1603619831597" duration="608000" />
       <workItem from="1603622489224" duration="43000" />
       <workItem from="1603623182623" duration="1193000" />
+      <workItem from="1603678017604" duration="6764000" />
     </task>
     <servers />
   </component>
@@ -96,14 +104,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="测试提交" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="229" key="FileChooserDialogImpl" timestamp="1603622531585">
+    <state x="488" y="229" key="FileChooserDialogImpl" timestamp="1603701163151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="488" y="229" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603622531585" />
-    <state x="471" y="110" key="SettingsEditor" timestamp="1603365134256">
+    <state x="488" y="229" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603701163151" />
+    <state x="471" y="110" key="SettingsEditor" timestamp="1603701280984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="471" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603365134256" />
+    <state x="471" y="110" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603701280984" />
     <state x="782" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1603368792623">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

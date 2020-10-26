@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <first></first>
+    <hr>
+    <second></second>
+    <hr>
+    <com1></com1>
+    <com2></com2>
+
+</div>
+
+<!--  vue js 的引入-->
+<script src="js/vue.min.js"></script>
+<script src="js/vuex.3.0.1.js"></script>
+
+<script>
+
+    let first = {
+        template: `
+            <div>
+            组件一
+            <button @click="add_num">点击数字变大</button>
+            </div>
+        `,
+        methods:{
+            add_num(){
+                // 在函数中向状态机提交一个动作  变化
+                // 此时 num_p 是一个函数
+                this.$store.commit("num_p")
+            },
+        },
+    }
+
+    let second = {
+        template: `
+            <div>
+            组件二
+            <span>点击组件一的按钮，使组件二中的这个数字改变:  {{ $store.state.num }}</span>
+            </div>
+        `,
+    }
+
+    let com1 = {
+        template : `
+            <div>
+            组件一
+            <button @click="click_me">按钮</button>
+            </div>
+        `,
+        methods: {
+            click_me() {
+                this.$store.commit("edit_user", {username: "小白", pwd: "00000"})
+            }
+        },
+    }
+
+    let com2 = {
+        template : `
+            <div>
+            组件二
+            <hr>
+            er: {{ $store.state.user }}
+            </div>
+        `,
+    }
+
+
+    // 创建状态机  初始化状态state以及行为mutations
+    let myStore = new Vuex.Store({
+        // 状态  -- 被共享的数据
+        state : {
+            // 需要共享的数据
+            num : 1,
+            user: {
+                username: "看看",
+                pwd: "123456",
+            }
+        },
+        // 状态机的动作， 所有组件提交的动作都可以在此被接受
+        mutations : {
+            // 接收组件1提交的动作
+            num_p: function (state) {
+                // 在动作中可以对共享的数据做限制
+                // if (state.num < 10) {
+                    state.num++;
+                // }
+            },
+            edit_user: function (state, user) {
+                console.log(state.user.username, user);
+                state.user.username = user.username;
+                state.user.pwd = user.pwd;
+            }
+        },
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        components:{
+            first: first,
+            second: second,
+            com1: com1,
+            com2: com2,
+        },
+        // 将状态机注入到vue实例中
+        store: myStore,
+    })
+</script>
+</body>
+</html>
